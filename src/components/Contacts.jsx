@@ -184,6 +184,7 @@ export const Contacts = () => {
     });
     tl.from(".contact_container", {
       opacity: 0,
+      scale: 0,
       duration: 2,
       ease: "power2.inOut",
     });
