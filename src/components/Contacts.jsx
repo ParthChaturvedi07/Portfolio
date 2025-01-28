@@ -49,7 +49,6 @@ const Yellow_Glow2 = styled.div`
 const Heading = styled.h1`
   text-align: center;
   margin-top: 10vh;
-  // background-color: green;
 `;
 
 const Contact = styled.div`
@@ -65,8 +64,8 @@ const Background_Text = styled.div`
   h1 {
     font-size: 15rem;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: rgba(255, 255, 255, 0.2);
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgba(255, 215, 0, 0.2);
+    -webkit-text-stroke-width: 1.8px;
   }
 `;
 
@@ -76,7 +75,7 @@ const Contact_container = styled.div`
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(2px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 215, 0, 0.2);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -143,7 +142,7 @@ const My_Photo = styled.div`
   width: 55%;
   height: 90%;
   position: absolute;
-  right: -20%;
+  right: -18%;
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
