@@ -14,8 +14,8 @@ const Cursor_div = styled.div`
 `;
 
 const Cursor_blur = styled.div`
-  height: 150px;
-  width: 150px;
+  height: 130px;
+  width: 130px;
   background-color: #ffae00;
   border-radius: 50%;
   position: fixed;

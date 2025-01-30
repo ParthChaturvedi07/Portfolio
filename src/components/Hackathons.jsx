@@ -26,32 +26,6 @@ const Hackathons_Container = styled.section`
   overflow: hidden;
 `;
 
-const Yellow_Abstract = styled.div`
-  position: absolute;
-  right: 2%;
-  top: 40%;
-  height: 12vw;
-  width: 12vw;
-  opacity: 0.9;
-  overflow: hidden;
-  transform: rotate(90deg);
-  animation: rotate 10s linear infinite;
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-  }
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-`;
-
 const Heading = styled.div`
   display: inline-block;
   transform: rotate(90deg);
@@ -64,7 +38,7 @@ const Heading = styled.div`
 
 const Bento_Grid = styled.div`
   position: absolute;
-  width: 65vw;
+  width: 68vw;
   height: 85vh;
   left: 50%;
   top: 50%;
@@ -134,7 +108,7 @@ const Video = styled.div`
 const About = styled.div`
   text-align: center;
   p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     line-height: 1.9;
     letter-spacing: 1.2px;
     max-width: 90%;
@@ -289,12 +263,6 @@ export const Hackathons = () => {
 
   return (
     <Hackathons_Container ref={Hack_Cont}>
-      <Yellow_Abstract>
-        <img
-          src="https://static.vecteezy.com/system/resources/previews/029/460/724/non_2x/hud-futuristic-element-abstract-optical-neon-aim-circle-geometric-shape-for-virtual-interface-and-games-camera-viewfinder-for-sniper-weapon-png.png"
-          alt=""
-        />
-      </Yellow_Abstract>
       <Heading className="heading">
         <h1>
           <span>H</span>
