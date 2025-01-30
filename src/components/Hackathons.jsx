@@ -158,7 +158,7 @@ const About = styled.div`
     cursor: none;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    transform: scale(0.72);
+    transform: scale(0.78);
 
     svg {
       position: absolute;

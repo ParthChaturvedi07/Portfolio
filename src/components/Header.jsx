@@ -56,6 +56,7 @@ const Resume_Button = styled.button`
   background-color: transparent;
   position: relative;
   cursor: none;
+  text-decoration: none;
 
   &:after {
     padding: 5px 20px;
@@ -156,20 +157,39 @@ const Resume_Button = styled.button`
 
 const scrollToSection = (id) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-}
+};
 
 export const Header = () => {
   return (
     <Nav className="nav">
       <MyLogo src={parthLogo} alt="" />
       <NavItems>
-        <NavLink to="#" onClick={() => scrollToSection('home')}>Home</NavLink>
-        <NavLink to="#" onClick={() => scrollToSection('about')}>About</NavLink>
-        <NavLink to="#" onClick={() => scrollToSection('skills')}>Skills</NavLink>
-        <NavLink to="#" onClick={() => scrollToSection('projects')}>Projects</NavLink>
-        <NavLink to="#" onClick={() => scrollToSection('contact')}>Contact</NavLink>
+        <NavLink to="#" onClick={() => scrollToSection("home")}>
+          Home
+        </NavLink>
+        <NavLink to="#" onClick={() => scrollToSection("about")}>
+          About
+        </NavLink>
+        <NavLink to="#" onClick={() => scrollToSection("skills")}>
+          Skills
+        </NavLink>
+        <NavLink to="#" onClick={() => scrollToSection("projects")}>
+          Projects
+        </NavLink>
+        <NavLink to="#" onClick={() => scrollToSection("contact")}>
+          Contact
+        </NavLink>
       </NavItems>
-      <Resume_Button>RESUME</Resume_Button>
+      <Resume_Button
+        onClick={() =>
+          window.open(
+            "https://drive.google.com/file/d/1h6Lqze75uTNjd1dyWrGJSSJbf7RIHDH1/view?usp=sharing",
+            "_blank"
+          )
+        }
+      >
+        RESUME
+      </Resume_Button>
     </Nav>
   );
 };

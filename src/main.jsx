@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import styled from "styled-components";
+import { BrowserRouter } from "react-router-dom";
 
 const BlurBackground = styled.div`
   position: absolute;
@@ -12,13 +13,15 @@ const BlurBackground = styled.div`
   height: 1000vh;
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px); 
+  backdrop-filter: blur(2px);
   z-index: 0.1;
 `;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BlurBackground></BlurBackground>
-    <App />
+    <BrowserRouter>
+      <BlurBackground></BlurBackground>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );
