@@ -14,7 +14,7 @@ const Main = styled.div`
   color: #fff;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   width: 100%;
-  min-height: 110vh;
+  min-height: 100vh;
   position: relative;
 `;
 

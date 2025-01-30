@@ -17,6 +17,7 @@ import Backend1 from "../assets/images/backend1.webp";
 import Backend2 from "../assets/images/Backend2.webp";
 import Model_1 from "../assets/images/ProjectModel(1).png";
 import Model_2 from "../assets/images/ProjectModel(2).png";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -152,6 +153,11 @@ const Card = styled.div`
       0 8px 16px rgba(255, 255, 255, 0.2);
     filter: brightness(1.2);
   }
+
+  .link {
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 const Card_2 = styled.div`
@@ -177,6 +183,11 @@ const Card_2 = styled.div`
     box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.8),
       0 8px 16px rgba(255, 255, 255, 0.2);
     filter: brightness(1.2);
+  }
+
+  .link {
+    height: 100%;
+    width: 100%;
   }
 `;
 
@@ -346,95 +357,123 @@ export const Projects = () => {
         <Project_Container_1 ref={Proj_Con_1}>
           <Slider style={{ "--quantity": 6 }}>
             <Card style={{ "--position": 1 }}>
-              <Project_Cover>
-                <img src={LazarevIMG} alt="Lazarev" />
-              </Project_Cover>
-              <CardContent>
-                <CardTitle>Lazarev</CardTitle>
-                <CardDescription>
-                  Revamped As a leading digital product design agency, Lazarev
-                  which offers custom-tailored solutions focused on your
-                  business growth. Discover how we can bring your digital
-                  product to life.
-                </CardDescription>
-              </CardContent>
+              <Link
+                to="https://parthchaturvedi07.github.io/lazarev/"
+                className="link"
+              >
+                <Project_Cover>
+                  <img src={LazarevIMG} alt="Lazarev" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>Lazarev</CardTitle>
+                  <CardDescription>
+                    Revamped As a leading digital product design agency, Lazarev
+                    which offers custom-tailored solutions focused on your
+                    business growth. Discover how we can bring your digital
+                    product to life.
+                  </CardDescription>
+                </CardContent>
+              </Link>
             </Card>
             <Card style={{ "--position": 2 }}>
-              <Project_Cover>
-                <img src={appleSiteIMG} alt="Apple" />
-              </Project_Cover>
-              <CardContent>
-                <CardTitle>I Clone 15</CardTitle>
-                <CardDescription>
-                  a fully interactive iPhone 15 clone built using React,
-                  Three.js, GSAP, and Tailwind CSS! <br /> For this project, I
-                  focused on creating a modern, interactive UI inspired by the
-                  iPhone 15’s sleek design. The goal was to deliver a smooth,
-                  engaging user experience with advanced animations, 3D effects,
-                  and responsive styling.
-                </CardDescription>
-              </CardContent>
+              <Link to="https://iphonecentral15.netlify.app/" className="link">
+                <Project_Cover>
+                  <img src={appleSiteIMG} alt="Apple" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>I Clone 15</CardTitle>
+                  <CardDescription>
+                    a fully interactive iPhone 15 clone built using React,
+                    Three.js, GSAP, and Tailwind CSS! <br /> For this project, I
+                    focused on creating a modern, interactive UI inspired by the
+                    iPhone 15’s sleek design. The goal was to deliver a smooth,
+                    engaging user experience with advanced animations, 3D
+                    effects, and responsive styling.
+                  </CardDescription>
+                </CardContent>
+              </Link>
             </Card>
             <Card style={{ "--position": 3 }}>
-              <Project_Cover>
-                <img src={MMILImg} alt="MMIL website" />
-              </Project_Cover>
-              <CardContent>
-                <CardTitle>MMIL Website</CardTitle>
-                <CardDescription>
-                  Worked in a team developing my College's tech society,
-                  Microsoft Mobile Innovation Lab's website fully based on React
-                  and a bit of backend with Node.js and Express.js
-                </CardDescription>
-              </CardContent>
+              <Link
+                to="https://mmil-website-2k24-frontend.onrender.com/"
+                className="link"
+              >
+                <Project_Cover>
+                  <img src={MMILImg} alt="MMIL website" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>MMIL Website</CardTitle>
+                  <CardDescription>
+                    Worked in a team developing my College's tech society,
+                    Microsoft Mobile Innovation Lab's website fully based on
+                    React and a bit of backend with Node.js and Express.js
+                  </CardDescription>
+                </CardContent>
+              </Link>
             </Card>
             <Card style={{ "--position": 4 }}>
-              <Project_Cover>
-                <img src={E_equilibriumIMG} alt="Empheral Eqilibrium" />
-              </Project_Cover>
-              <CardContent>
-                <CardTitle>Empheral Equilibrium</CardTitle>
-                <CardDescription style={{ color: "black" }}>
-                  Dynamic Sustainability Web i.e Empheral Equilibrium with GSAP
-                  & Locomotive Scroll" is a web development project showcasing
-                  modern design techniques and a sustainability theme. It
-                  features advanced animations, smooth scrolling, and
-                  interactive elements, created using HTML, CSS, JavaScript,
-                  GSAP, and Locomotive Scroll. The project aims to promote
-                  eco-friendly practices through engaging web experiences.
-                </CardDescription>
-              </CardContent>
+              <Link
+                to="https://parthchaturvedi07.github.io/GSAP-proj.2-/"
+                className="link"
+              >
+                <Project_Cover>
+                  <img src={E_equilibriumIMG} alt="Empheral Eqilibrium" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>Empheral Equilibrium</CardTitle>
+                  <CardDescription style={{ color: "black" }}>
+                    Dynamic Sustainability Web i.e Empheral Equilibrium with
+                    GSAP & Locomotive Scroll" is a web development project
+                    showcasing modern design techniques and a sustainability
+                    theme. It features advanced animations, smooth scrolling,
+                    and interactive elements, created using HTML, CSS,
+                    JavaScript, GSAP, and Locomotive Scroll. The project aims to
+                    promote eco-friendly practices through engaging web
+                    experiences.
+                  </CardDescription>
+                </CardContent>
+              </Link>
             </Card>
             <Card style={{ "--position": 5 }}>
-              <Project_Cover>
-                <img src={EcommmerceIMG} alt="E-commmerce" />
-              </Project_Cover>
-              <CardContent>
-                <CardTitle>StyleHub 🛍️: Ecommerce website 💻</CardTitle>
-                <CardDescription>
-                  I developed an eCommerce website as a part of my learning
-                  journey in web development. This project aimed to create a
-                  platform where users can browse, select, and purchase products
-                  online. The website features a user-friendly interface with
-                  various functionalities to enhance the shopping experience.
-                </CardDescription>
-              </CardContent>
+              <Link
+                to="https://parthchaturvedi07.github.io/e-commerce-website/#"
+                className="link"
+              >
+                <Project_Cover>
+                  <img src={EcommmerceIMG} alt="E-commmerce" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>StyleHub 🛍️: Ecommerce website 💻</CardTitle>
+                  <CardDescription>
+                    I developed an eCommerce website as a part of my learning
+                    journey in web development. This project aimed to create a
+                    platform where users can browse, select, and purchase
+                    products online. The website features a user-friendly
+                    interface with various functionalities to enhance the
+                    shopping experience.
+                  </CardDescription>
+                </CardContent>
+              </Link>
             </Card>
+
             <Card style={{ "--position": 6 }}>
-              <Project_Cover>
-                <img src={portfolioIMG} alt="Lazarev" />
-              </Project_Cover>
-              <CardContent>
-                <CardTitle>Lazarev</CardTitle>
-                <CardDescription>
-                  My portfolio highlights a diverse range of frontend
-                  development skills, showcasing innovative animations, creative
-                  problem-solving, and advanced 3D rendering techniques. It
-                  reflects a seamless blend of functional and creative
-                  development, emphasizing versatility and attention to detail
-                  in building dynamic and visually captivating user experiences
-                </CardDescription>
-              </CardContent>
+              <Link to="" className="link">
+                <Project_Cover>
+                  <img src={portfolioIMG} alt="Portfolio" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>Lazarev</CardTitle>
+                  <CardDescription>
+                    My portfolio highlights a diverse range of frontend
+                    development skills, showcasing innovative animations,
+                    creative problem-solving, and advanced 3D rendering
+                    techniques. It reflects a seamless blend of functional and
+                    creative development, emphasizing versatility and attention
+                    to detail in building dynamic and visually captivating user
+                    experiences
+                  </CardDescription>
+                </CardContent>
+              </Link>
             </Card>
           </Slider>
           <Content_Type>
@@ -451,31 +490,42 @@ export const Projects = () => {
         <Project_Container_2 ref={Proj_Con_2}>
           <Slider style={{ "--quantity": 4 }}>
             <Card_2 style={{ "--position": 1 }}>
-              <Project_Cover>
-                <img src={Linkedin_IMG} alt="Linkedin" />
-              </Project_Cover>
-              <CardContent>
-                <CardTitle>Linkedin</CardTitle>
-                <CardDescription style={{ color: "black" }}>
-                  a LinkedIn clone built using the 𝐌𝐄𝐑𝐍 stack! This was a
-                  challenging yet rewarding journey that allowed me to deepen my
-                  skills in full-stack development while integrating advanced
-                  tools and features to simulate the LinkedIn experience.
-                </CardDescription>
-              </CardContent>
+              <Link
+                to="https://www.linkedin.com/feed/update/urn:li:activity:7278450445436514305/"
+                className="link"
+              >
+                <Project_Cover>
+                  <img src={Linkedin_IMG} alt="Linkedin" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>Linkedin</CardTitle>
+                  <CardDescription style={{ color: "black" }}>
+                    a LinkedIn clone built using the 𝐌𝐄𝐑𝐍 stack! This was a
+                    challenging yet rewarding journey that allowed me to deepen
+                    my skills in full-stack development while integrating
+                    advanced tools and features to simulate the LinkedIn
+                    experience.
+                  </CardDescription>
+                </CardContent>
+              </Link>
             </Card_2>
             <Card_2 style={{ "--position": 2 }}>
-              <Project_Cover>
-                <img src={Chat_App_IMG} alt="ChatApp" />
-              </Project_Cover>
-              <CardContent>
-                <CardTitle>Chat Application</CardTitle>
-                <CardDescription style={{ color: "black" }}>
-                  A real-time chat application built using the MERN stack and
-                  Socket.IO, enabling seamless communication with live messaging
-                  and intuitive UI.
-                </CardDescription>
-              </CardContent>
+              <Link
+                to="https://chat-application-ar98.onrender.com/"
+                className="link"
+              >
+                <Project_Cover>
+                  <img src={Chat_App_IMG} alt="ChatApp" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>Chat Application</CardTitle>
+                  <CardDescription style={{ color: "black" }}>
+                    A real-time chat application built using the MERN stack and
+                    Socket.IO, enabling seamless communication with live
+                    messaging and intuitive UI.
+                  </CardDescription>
+                </CardContent>
+              </Link>
             </Card_2>
             <Card_2 style={{ "--position": 3 }}>
               <Project_Cover>

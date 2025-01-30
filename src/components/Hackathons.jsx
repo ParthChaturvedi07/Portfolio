@@ -325,7 +325,7 @@ export const Hackathons = () => {
             final round of the Reimagine Hackathon, Orflax Track of Innovortex
             2.0 , organized by TechNeeds IGDTUW at Microsoft office Gurgaon.
           </p>
-          <button>
+          <button onClick={() => window.open("https://www.linkedin.com/posts/parth-chaturvedi-dev_webdevelopment-webdesign-design-activity-7246376533123104769-X3w2/?utm_source=share&utm_medium=member_desktop", "_blank")}>
             <svg
               viewBox="0 0 24 24"
               class="arr-2"
@@ -351,7 +351,7 @@ export const Hackathons = () => {
             and blockchain-verified certifications, offering internships, job
             simulations, and mental health support for holistic growth.
           </p>
-          <button>
+          <button onClick={()=> window.open("http://linkedin.com/posts/parth-chaturvedi-dev_hey-folks-im-excited-to-share-our-recent-activity-7264893479472775168-GPNC/?utm_source=share&utm_medium=member_desktop")}>
             <svg
               viewBox="0 0 24 24"
               class="arr-2"
