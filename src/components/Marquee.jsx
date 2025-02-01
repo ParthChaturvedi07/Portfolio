@@ -13,6 +13,10 @@ const Main = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 480px) {
+    padding: 2rem 0;
+  }
 `;
 
 const Text = styled.div`
@@ -29,12 +33,21 @@ const Text = styled.div`
     font-weight: 700;
     text-transform: uppercase;
     padding-right: 6vh;
+
+    @media only screen and (max-width: 480px) {
+      font-size: 20vw;
+    }
   }
 `;
 
 export const Marquee = () => {
   return (
-    <Main className="marquee" data-scroll data-scroll-section data-scroll-speed=".1">
+    <Main
+      className="marquee"
+      data-scroll
+      data-scroll-section
+      data-scroll-speed=".1"
+    >
       <Text>
         <motion.h1
           initial={{ x: 0 }}

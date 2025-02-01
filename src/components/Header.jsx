@@ -28,7 +28,7 @@ const Nav = styled.nav`
       display: none;
     }
 
-    @media only screen and (max-width: 680px) {
+    @media only screen and (max-width: 820px) {
       background-color: transparent;
       backdrop-filter: none;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -37,7 +37,7 @@ const Nav = styled.nav`
     }
   }
 
-  @media only screen and (max-width: 680px) {
+  @media only screen and (max-width: 820px) {
     &.nav1 i {
       display: block;
     }
@@ -48,7 +48,7 @@ const Nav = styled.nav`
     top: 0;
     right: 0;
     height: 100vh;
-    width: 150px;
+    width: 180px;
     z-index: 30;
     backdrop-filter: blur(10px);
     border-left: 2px solid rgba(255, 255, 255, 0.1);
@@ -87,12 +87,8 @@ const NavItems = styled.div`
       display: none;
     }
 
-    @media only screen and (min-width: 481px) and (max-width: 680px) {
+    @media only screen and (min-width: 481px) and (max-width: 820px) {
       display: none;
-    }
-
-    @media only screen and (min-width: 681px) and (max-width: 768px) {
-      gap: 5vh;
     }
   }
 
@@ -115,10 +111,6 @@ const NavLink = styled.a`
     color: #ffd700;
     text-shadow: 0 0 8px #ffd700, 0 0 16px #ffae00, 0 0 24px #ff8c00;
     transform: scale(1.1);
-  }
-
-  @media only screen and (min-width: 681px) and (max-width: 768px) {
-    font-size: 2.3vh;
   }
 `;
 
@@ -229,7 +221,7 @@ const Resume_Button = styled.button`
     }
   }
 
-  @media only screen and (max-width: 680px) {
+  @media only screen and (max-width: 820px) {
     display: none;
   }
 
@@ -243,7 +235,7 @@ const Sidebar = styled.div`
   top: 0;
   right: 0;
   height: 100vh;
-  width: 150px;
+  width: 180px;
   z-index: 30;
   backdrop-filter: blur(10px);
   border-left: 2px solid rgba(255, 255, 255, 0.1);
@@ -262,7 +254,7 @@ const Sidebar = styled.div`
   z-index: 31;
 
   .button {
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 820px) {
       display: block;
     }
   }
