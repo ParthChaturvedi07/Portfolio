@@ -44,6 +44,12 @@ const Columns = styled.div`
   display: flex;
   gap: 1.5rem;
 
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    gap: 0;
+  }
+
   &.box1 {
     .col-1 {
       display: flex;
@@ -58,6 +64,18 @@ const Columns = styled.div`
         align-self: center;
         transform: rotate(20deg);
       }
+    
+    @media only screen and (max-width: 480px) {
+      gap: 0;
+        img:first-child {
+          transform: rotate(-5deg) scale(0.6);
+        }
+        img:nth-child(2) {
+          align-self: center;
+          transform:  scale(0.6);
+        }
+    }
+    
     }
 
     .col-2 {
@@ -76,12 +94,26 @@ const Columns = styled.div`
         opacity: 0.8;
         text-align: center;
       }
+    
+    @media only screen and (max-width: 480px){
+      h1{
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 1vh;
+      }
+      .text-box ul li,
+      .text-box p {
+        justify-self: center;
+        font-size: 0.8rem;
+       line-height: 1.6;
+      }
+    }  
+    
     }
 
     .col-3 {
       display: flex;
       gap: 2.5rem;
-      // flex-direction: column;
       flex: 4;
 
       img:nth-child(1) {
@@ -91,8 +123,19 @@ const Columns = styled.div`
         transform: rotate(-20deg);
         align-self: center;
       }
+    
+    @media only screen and (max-width: 480px){
+      gap: 0;
+      
+      img:nth-child(1) {
+        transform: rotate(20deg) scale(0.6);
+      }
+      img:nth-child(2) {
+        transform: rotate(-20deg) scale(0.6);
+        align-self: center;
+      }
+    }  
     }
-  }
 
   &.box2 {
     .col-1 {
@@ -211,6 +254,7 @@ const Columns = styled.div`
       }
     }
   }
+
 `;
 
 const Col = styled.div`
@@ -248,6 +292,10 @@ const SVG_Container = styled.div`
     100% {
       filter: drop-shadow(0 0 10px #ffd700);
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
   }
 `;
 export const Skills = () => {
@@ -377,10 +425,9 @@ export const Skills = () => {
       }
     );
 
-    const handleResize = () => {
-      ScrollTrigger.refresh();
-    };
+    const handleResize = () => ScrollTrigger.refresh();
     window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
     <>

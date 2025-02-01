@@ -24,7 +24,7 @@ const Main = styled.div`
   width: 100%;
   position: relative;
   border-top: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
+  border-radius: 50px 50px 0 0;
   overflow: hidden;
 `;
 
@@ -59,6 +59,11 @@ const TextContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 480px) {
+    height: auto;
+    justify-content: flex-start;
+  }
 `;
 
 const ImgText = styled.div``;
@@ -104,6 +109,78 @@ const Title = styled.div`
   span {
     position: absolute;
   }
+
+  @media only screen and (max-width: 480px) {
+    &:nth-child(1) {
+      font-size: 1.5rem;
+      font-weight: bold;
+      left: 18%;
+      top: 15vh;
+    }
+
+    &:nth-child(2) {
+      left: 18%;
+      height: 25vh;
+      width: 60%;
+
+      span {
+        font-size: 0.8rem;
+        line-height: 1.3;
+      }
+    }
+
+    &:nth-child(3) {
+      font-size: 1.5rem;
+      left: 18%;
+      height: 10vh;
+    }
+
+    &:nth-child(4) {
+      left: 18%;
+      height: 21vh;
+      width: 60%;
+      span {
+        font-size: 0.8rem;
+        line-height: 1.3;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    &:nth-child(1) {
+      font-size: 2rem;
+      font-weight: bold;
+      left: -13vh;
+      top: 15vh;
+    }
+
+    &:nth-child(2) {
+      left: -13vh;
+      height: 28vh;
+      width: 60%;
+
+      span {
+        font-size: 0.9rem;
+        line-height: 1.3;
+      }
+    }
+
+    &:nth-child(3) {
+      font-size: 1.5rem;
+      left: 78%;
+      height: 10vh;
+    }
+
+    &:nth-child(4) {
+      left: 78%;
+      height: 21vh;
+      width: 55%;
+      span {
+        font-size: 0.9rem;
+        line-height: 1.3;
+      }
+    }
+  }
 `;
 
 const TextBottom = styled.p`
@@ -112,6 +189,16 @@ const TextBottom = styled.p`
   font-size: 0.9rem;
   letter-spacing: 12px;
   font-weight: 300;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 0.5rem;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    font-size: 0.7rem;
+    text-align: center;
+  }
 `;
 
 const V_container = styled.div`
@@ -121,6 +208,20 @@ const V_container = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 1fr;
+
+  @media only screen and (max-width: 480px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 const TV = styled.div`
@@ -139,6 +240,34 @@ const TV = styled.div`
       font-size: 3.125rem;
       transform: translateY(5vh);
       font-weight: bold;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    div {
+      &:nth-child(1) {
+        font-size: 2.125rem;
+      }
+      &:nth-child(2) {
+        font-size: 1rem;
+      }
+      &:nth-child(3) {
+        font-size: 2.125rem;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    div {
+      &:nth-child(1) {
+        font-size: 2.8rem;
+      }
+      &:nth-child(2) {
+        font-size: 1rem;
+      }
+      &:nth-child(3) {
+        font-size: 2.8rem;
+      }
     }
   }
 `;
@@ -191,6 +320,26 @@ const RightSide = styled.div`
       }
     }
   }
+
+  @media only screen and (max-width: 480px) {
+    width: 90px;
+    height: 90px;
+
+    p {
+      font-size: 0.75rem;
+      gap: 0.2rem;
+    }
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+
+    p{
+      font-size: 0.7rem;
+      gap: 0.4rem;
+    }
+  }
 `;
 
 const Text_Container = styled.div`
@@ -200,6 +349,12 @@ const Text_Container = styled.div`
     padding-bottom: 1rem;
     line-height: 1.4;
     opacity: 0.9;
+  }
+
+  @media only screen and (max-width: 480px) {
+    p {
+      font-size: 1.1rem;
+    }
   }
 `;
 
@@ -307,7 +462,7 @@ export const About = () => {
   return (
     <>
       <Triggerer_Div className="triggerer"></Triggerer_Div>
-      <Main id ="about" className="video-section">
+      <Main id="about" className="video-section">
         <VideoContainer>
           <video src={Video} autoPlay loop muted></video>
         </VideoContainer>
