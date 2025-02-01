@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import { useCursor } from "../context/CursorContext"; // Import the shared context
+import { useCursor } from "../context/CursorContext"; 
 import gsap from "gsap";
 
 const Cursor_div = styled.div`
@@ -11,6 +11,15 @@ const Cursor_div = styled.div`
   position: fixed;
   z-index: 99;
   pointer-events: none;
+
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px){
+    height: 12px;
+    width: 12px;
+  }
 `;
 
 const Cursor_blur = styled.div`
@@ -22,6 +31,16 @@ const Cursor_blur = styled.div`
   filter: blur(45px);
   pointer-events: none;
   z-index: 98;
+
+  @media only screen and (max-width: 480px) {
+   display: none;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px){
+    height: 90px;
+    width: 90px;
+    filter: blur(30px);
+  }
 `;
 
 export const Cursor = () => {

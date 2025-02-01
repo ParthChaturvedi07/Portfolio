@@ -37,6 +37,16 @@ const Back_Glow = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+
+  @media only screen and (max-width: 480px) {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    width: 25rem;
+    height: 25rem;
+  }
 `;
 
 const CanvasElement = styled.canvas`
@@ -59,6 +69,14 @@ const MyLogo = styled.img`
   filter: saturate(150), contrast(150);
   opacity: 0;
   z-index: 2;
+
+  @media only screen and (max-width: 480px) {
+    width: 20rem;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    width: 34rem;
+  }
 `;
 
 const QuoteContainer = styled.div`
@@ -77,6 +95,16 @@ const QuoteContainer = styled.div`
     &:hover {
       color: #ffd700;
     }
+  }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 0.9rem;
+    width: 28vh;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    font-size: 1.1rem;
+    width: 36vh;
   }
 `;
 
@@ -132,6 +160,16 @@ export const Home = () => {
       }
     );
 
+    const getResponsiveScale = () => {
+      const width = window.innerWidth;
+
+      if (width < 480) return { x: 0.65, y: 0.65, z: 0.65 };
+      if (width < 768) return { x: 0.75, y: 0.75, z: 0.75 };
+      if (width < 1024) return { x: 0.9, y: 0.9, z: 0.9 };
+
+      return { x: 1, y: 1, z: 1 };
+    };
+
     let model;
 
     const loader = new GLTFLoader();
@@ -140,6 +178,8 @@ export const Home = () => {
       (gltf) => {
         model = gltf.scene;
         scene.add(model);
+        const initialScale = getResponsiveScale();
+        model.scale.set(initialScale.x, initialScale.y, initialScale.z);
 
         // Create a GSAP timeline
         const tl = gsap.timeline();
@@ -147,7 +187,13 @@ export const Home = () => {
         tl.fromTo(
           gltf.scene.scale,
           { x: 2, y: 2, z: 2 },
-          { x: 1, y: 1, z: 1, duration: 2, ease: "power3.out" },
+          {
+            x: initialScale.x,
+            y: initialScale.y,
+            z: initialScale.z,
+            duration: 2,
+            ease: "power3.out",
+          },
           "anim"
         );
 
@@ -201,6 +247,9 @@ export const Home = () => {
     });
 
     window.addEventListener("resize", () => {
+      const newScale = getResponsiveScale();
+      if (model) model.scale.set(newScale.x, newScale.y, newScale.z);
+
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);

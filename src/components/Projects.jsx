@@ -33,6 +33,11 @@ const Main = styled.main`
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50px 50px 0 0;
   position: relative;
+
+  @media only screen and (min-width : 480px) {
+  
+  }
+
 `;
 
 const Section = styled.section``;

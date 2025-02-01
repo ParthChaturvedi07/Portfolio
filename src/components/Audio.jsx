@@ -4,7 +4,6 @@ import styled, { keyframes } from "styled-components";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-// Keyframes for rotating text
 const rotateText = keyframes`
   0% {
     transform: rotate(0deg);
@@ -13,8 +12,6 @@ const rotateText = keyframes`
     transform: rotate(360deg);
   }
 `;
-
-// Styled components
 const Wrapper = styled.div`
   position: fixed;
   z-index: 98;
@@ -24,12 +21,22 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   cursor: none;
+
+  @media only screen and (max-width: 480px) {
+    right: 2rem;
+    top: 83%;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    right: 3rem;
+    top: 81%;
+  }
 `;
 
 const Circle = styled.div`
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 10vh;
+  height: 10vh;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -46,6 +53,18 @@ const Logo = styled.div`
   background-size: cover;
   border-radius: 50%;
   transform: scale(0.5);
+
+  @media only screen and (max-width: 480px) {
+    width: 120px;
+    height: 120px;
+    transform: scale(0.4);
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+    transform: scale(0.45);
+  }
 `;
 
 const Text = styled.div`
@@ -63,6 +82,18 @@ const Text = styled.div`
     display: inline-block;
     white-space: nowrap;
   }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 0.8rem;
+    height: 142%;
+    font-weight: bold;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    font-size: 1rem;
+    height: 114%;
+    font-weight: bold;
+  }
 `;
 
 const Button = styled.button`
@@ -70,7 +101,7 @@ const Button = styled.button`
   padding: 5px;
   border-radius: 100%;
   box-shadow: 0px 0px 5px 7px #ffd700;
-  background-color: #FFC107;
+  background-color: #ffc107;
   color: white;
   font-size: 17px;
   border: none;
@@ -93,6 +124,12 @@ const Button = styled.button`
   &:active {
     border-radius: 100%;
     box-shadow: inset 0px 0px 10px 0px rgb(240, 237, 237);
+  }
+
+  @media only screen and (max-width: 480px) {
+    transform: scale(1.4);
+    font-size: 14px;
+    box-shadow: 0px 0px 3px 5px #ffd700;
   }
 `;
 
@@ -117,7 +154,7 @@ export const Audio = () => {
       opacity: 0,
       scale: 2,
       delay: 1.4,
-    });                                                                                                                                                                                                                                  
+    });
   });
 
   return (
