@@ -37,6 +37,10 @@ const Boxes_container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6rem;
+
+  @media only screen and (max-width: 768px) {
+    gap: 3rem;
+  }
 `;
 
 const Columns = styled.div`
@@ -44,10 +48,14 @@ const Columns = styled.div`
   display: flex;
   gap: 1.5rem;
 
-
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 620px) {
     flex-direction: column;
+    align-items: center;
     gap: 0;
+  }
+
+  @media only screen and (min-width: 621px) and (max-width: 768px) {
+    gap: 1rem;
   }
 
   &.box1 {
@@ -64,18 +72,28 @@ const Columns = styled.div`
         align-self: center;
         transform: rotate(20deg);
       }
-    
-    @media only screen and (max-width: 480px) {
-      gap: 0;
+
+      @media only screen and (max-width: 620px) {
+        gap: 0;
         img:first-child {
-          transform: rotate(-5deg) scale(0.6);
+          transform: rotate(-5deg);
         }
         img:nth-child(2) {
           align-self: center;
-          transform:  scale(0.6);
         }
-    }
-    
+      }
+
+      @media only screen and (min-width: 621px) and (max-width: 1024px) {
+        gap: 0;
+        flex-direction: column;
+        img:first-child {
+          transform: rotate(0deg);
+        }
+        img:nth-child(2) {
+          transform: rotate(0deg);
+          align-self: center;
+        }
+      }
     }
 
     .col-2 {
@@ -94,21 +112,34 @@ const Columns = styled.div`
         opacity: 0.8;
         text-align: center;
       }
-    
-    @media only screen and (max-width: 480px){
-      h1{
-        font-size: 40px;
-        text-align: center;
-        margin-bottom: 1vh;
+
+      @media only screen and (max-width: 620px) {
+        h1 {
+          font-size: 40px;
+          text-align: center;
+          margin-bottom: 1vh;
+        }
+        .text-box ul li,
+        .text-box p {
+          justify-self: center;
+          font-size: 0.8rem;
+          line-height: 1.6;
+        }
       }
-      .text-box ul li,
-      .text-box p {
-        justify-self: center;
-        font-size: 0.8rem;
-       line-height: 1.6;
+
+      @media only screen and (min-width: 621px) and (max-width: 768px) {
+        h1 {
+          font-size: 50px;
+          text-align: center;
+          margin-bottom: 1vh;
+        }
+       .text-box ul li,
+       .text-box p {
+          justify-self: center;
+          font-size: 0.8rem;
+          line-height: 1.7;
+        }
       }
-    }  
-    
     }
 
     .col-3 {
@@ -123,33 +154,37 @@ const Columns = styled.div`
         transform: rotate(-20deg);
         align-self: center;
       }
-    
-    @media only screen and (max-width: 480px){
-      gap: 0;
-      
-      img:nth-child(1) {
-        transform: rotate(20deg) scale(0.6);
+
+      @media only screen and (max-width: 620px) {
+        gap: 0;
+
+        img:nth-child(1) {
+          transform: rotate(20deg);
+        }
+        img:nth-child(2) {
+          transform: rotate(20deg);
+          align-self: center;
+        }
       }
-      img:nth-child(2) {
-        transform: rotate(-20deg) scale(0.6);
-        align-self: center;
-      }
-    }  
     }
+  }
 
-  &.box2 {
-    .col-1 {
-      display: flex;
-      flex-wrap: wrap;
+    &.box2 {
+      .col-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
 
-      img:first-child {
-        transform: rotate(-20deg);
-      }
-      img:nth-child(2) {
-        transform: rotate(20deg);
-      }
-      img:nth-child(3) {
-        transform: rotate(10deg);
+        img:first-child {
+          transform: rotate(-20deg);
+        }
+        img:nth-child(2) {
+          transform: rotate(20deg);
+        }
+        img:nth-child(3) {
+          transform: rotate(10deg);
+        }
       }
     }
 
@@ -170,6 +205,34 @@ const Columns = styled.div`
         opacity: 0.8;
         text-align: center;
       }
+
+      @media only screen and (max-width: 620px) {
+        h1 {
+          font-size: 30px;
+          margin-bottom: 1vh;
+        }
+        .text-box ul li,
+        .text-box p {
+          justify-self: center;
+          font-size: 0.8rem;
+          line-height: 1.6;
+        }
+      }
+
+      @media only screen and (min-width: 621px) and (max-width: 768px) {
+        h1 {
+          font-size: 50px;
+          text-align: center;
+          margin-bottom: 1vh;
+        }
+       .text-box ul li,
+       .text-box p {
+          justify-self: center;
+          font-size: 0.8rem;
+          line-height: 1.7;
+        }
+      }
+      
     }
 
     .col-3 {
@@ -188,6 +251,12 @@ const Columns = styled.div`
       }
       img:nth-child(4) {
         transform: rotate(-20deg);
+      }
+
+      @media only screen and (max-width: 620px) {
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
@@ -212,6 +281,21 @@ const Columns = styled.div`
         bottom: 0;
         transform: rotate(10deg);
       }
+      @media only screen and (max-width: 620px) {
+        img:first-child {
+          position: absolute;
+          right: 4vh;
+          top: 15vh;
+          transform: rotate(0deg) scale(0.8);
+        }
+
+        img:nth-child(2) {
+          position: absolute;
+          left: -1vh;
+          bottom: -10vh;
+          transform: rotate(20deg) scale(0.8);
+        }
+      }
     }
 
     .col-2 {
@@ -229,6 +313,32 @@ const Columns = styled.div`
         padding-bottom: 0.5rem;
         opacity: 0.8;
         text-align: center;
+      }
+
+      @media only screen and (max-width: 620px) {
+        h1 {
+          font-size: 30px;
+        }
+        .text-box ul li,
+        .text-box p {
+          justify-self: center;
+          font-size: 0.8rem;
+          line-height: 1.6;
+        }
+      }
+      
+      @media only screen and (min-width: 621px) and (max-width: 768px) {
+        h1 {
+          font-size: 50px;
+          text-align: center;
+          margin-bottom: 1vh;
+        }
+       .text-box ul li,
+       .text-box p {
+          justify-self: center;
+          font-size: 0.8rem;
+          line-height: 1.7;
+        }
       }
     }
 
@@ -252,9 +362,13 @@ const Columns = styled.div`
         bottom: 0;
         transform: rotate(-50deg);
       }
+
+      @media only screen and (max-width: 620px) {
+        width: 100%;
+        height: 13vh;
+      }
     }
   }
-
 `;
 
 const Col = styled.div`
@@ -262,6 +376,19 @@ const Col = styled.div`
     height: 190px;
     width: 170px;
     object-fit: cover;
+  }
+  @media only screen and (max-width: 620px) {
+    img {
+      height: 25vw;
+      width: 25vw;
+    }
+  }
+
+  @media only screen and (min-width: 621px) and (max-width: 768px) {
+    img {
+      height: 20vw;
+      width: 20vw;
+    }
   }
 `;
 
