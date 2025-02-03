@@ -33,11 +33,6 @@ const Main = styled.main`
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50px 50px 0 0;
   position: relative;
-
-  @media only screen and (min-width : 480px) {
-  
-  }
-
 `;
 
 const Section = styled.section``;
@@ -58,6 +53,22 @@ const Img_Container = styled.div`
     mask-size: cover;
     mask-repeat: no-repeat;
     mask-position: center;
+  }
+
+  @media only screen and (max-width: 480px) {
+    margin-top: 50%;
+    img {
+      width: 40vh;
+      height: 40vh;
+    }
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    margin-top: 10%;
+    img {
+      width: 80vh;
+      height: 80vh;
+    }
   }
 `;
 
@@ -84,6 +95,40 @@ const Text_Content = styled.div`
     width: 17vw;
     text-align: center;
     letter-spacing: 4px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    h1 {
+      font-size: 3.3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-color: #ff7c00;
+        -webkit-text-stroke-width: 1.3px;
+      }
+    }
+
+    p {
+      font-size: 0.4rem;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    h1 {
+      font-size: 9vh;
+    }
+
+    p {
+      font-size: 0.7rem;
+      text-align: center;
+      letter-spacing: 3px;
+    }
   }
 `;
 
@@ -132,6 +177,24 @@ const Slider = styled.div`
       transform: perspective(2000px) rotateX(-16deg) rotateY(360deg);
     }
   }
+
+  @media only screen and (max-width: 480px) {
+    width: 35vh;
+    height: 25vh;
+    top: 15%;
+    left: calc(50% - 19vh);
+
+    transform: perspective(1000px);
+
+    @keyframes autoRun {
+      from {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+      }
+      to {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+      }
+    }
+  }
 `;
 
 const Card = styled.div`
@@ -163,6 +226,15 @@ const Card = styled.div`
     height: 100%;
     width: 100%;
   }
+
+  @media only screen and (max-width: 480px) {
+    width: 35vh;
+    height: 25vh;
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(34vh);
+  }
 `;
 
 const Card_2 = styled.div`
@@ -193,6 +265,15 @@ const Card_2 = styled.div`
   .link {
     height: 100%;
     width: 100%;
+  }
+
+  @media only screen and (max-width: 480px) {
+    width: 35vh;
+    height: 25vh;
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(25vh);
   }
 `;
 
@@ -239,6 +320,11 @@ const CardTitle = styled.p`
   font-size: 24px;
   color: #ff8c00;
   font-weight: 700;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 12px;
+    whitespace: nowrap;
+  }
 `;
 
 const CardDescription = styled.p`
@@ -247,6 +333,11 @@ const CardDescription = styled.p`
   color: #fff;
   line-height: 1.4;
   font-weight: 500;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 9px;
+    line-height: 1.1;
+  }
 `;
 
 const Content_Type = styled.div`
@@ -263,7 +354,7 @@ const Content_Type = styled.div`
   align-items: center;
 
   h1 {
-    font-size: 8em;
+    font-size: 9em;
     line-height: 1em;
     color: #ffd700;
 
@@ -281,6 +372,49 @@ const Content_Type = styled.div`
   p {
     text-align: right;
     max-width: 40vh;
+  }
+
+  @media only screen and (max-width: 480px) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      font-size: 2.7em;
+      text-align: center;
+      white-space: nowrap;
+
+      &::after {
+        position: absolute;
+        inset: 0 0 0 0;
+        content: attr(data-content);
+        z-index: 2;
+        -webkit-text-stroke: 2px #ffd700;
+        color: transparent;
+      }
+    }
+
+    p {
+      z-index: 2;
+    }
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    h1 {
+      font-size: 6em;
+      white-space: nowrap;
+    }
+
+    p {
+      z-index: 2;
+    }
   }
 `;
 
