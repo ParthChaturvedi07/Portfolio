@@ -24,6 +24,21 @@ const Hackathons_Container = styled.section`
   padding: 0 10vh;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    padding: 5vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    padding: 0 5vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh;
+  }
 `;
 
 const Heading = styled.div`
@@ -33,6 +48,23 @@ const Heading = styled.div`
   left: -14%;
   h1 {
     font-size: 4.5rem;
+  }
+
+  @media only screen and (max-width: 480px) {
+    transform: rotate(0deg);
+    position: static;
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    transform: rotate(0deg);
+    position: static;
+    margin-top: 5vh;
+    h1 {
+      font-size: 4rem;
+    }
   }
 `;
 
@@ -78,6 +110,34 @@ const Bento_Grid = styled.div`
 
   .b22 {
     grid-area: b22;
+  }
+
+  @media only screen and (max-width: 480px) {
+    position: static;
+    width: 90vw;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "a11 a11"
+      "a12 b11"
+      "b22 b22";
+    gap: 0.5rem;
+    transform: none;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    position: static;
+    width: 80vw;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "a11 a11"
+      "a12 b11"
+      "b22 b22";
+    gap: 0.5rem;
+    transform: none;
   }
 `;
 
@@ -293,7 +353,14 @@ export const Hackathons = () => {
             final round of the Reimagine Hackathon, Orflax Track of Innovortex
             2.0 , organized by TechNeeds IGDTUW at Microsoft office Gurgaon.
           </p>
-          <button onClick={() => window.open("https://www.linkedin.com/posts/parth-chaturvedi-dev_webdevelopment-webdesign-design-activity-7246376533123104769-X3w2/?utm_source=share&utm_medium=member_desktop", "_blank")}>
+          <button
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/posts/parth-chaturvedi-dev_webdevelopment-webdesign-design-activity-7246376533123104769-X3w2/?utm_source=share&utm_medium=member_desktop",
+                "_blank"
+              )
+            }
+          >
             <svg
               viewBox="0 0 24 24"
               class="arr-2"
@@ -319,7 +386,13 @@ export const Hackathons = () => {
             and blockchain-verified certifications, offering internships, job
             simulations, and mental health support for holistic growth.
           </p>
-          <button onClick={()=> window.open("http://linkedin.com/posts/parth-chaturvedi-dev_hey-folks-im-excited-to-share-our-recent-activity-7264893479472775168-GPNC/?utm_source=share&utm_medium=member_desktop")}>
+          <button
+            onClick={() =>
+              window.open(
+                "http://linkedin.com/posts/parth-chaturvedi-dev_hey-folks-im-excited-to-share-our-recent-activity-7264893479472775168-GPNC/?utm_source=share&utm_medium=member_desktop"
+              )
+            }
+          >
             <svg
               viewBox="0 0 24 24"
               class="arr-2"
