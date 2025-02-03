@@ -1,6 +1,6 @@
-import { Home } from "./components/home";
 import React from "react";
 import "./index.css";
+import { Home } from "./components/Home"; 
 import { Header } from "./components/Header";
 import { Audio } from "./components/Audio";
 import { Cursor } from "./components/Cursor";
