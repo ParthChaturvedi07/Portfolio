@@ -11,21 +11,40 @@ const Eyes_Section = styled.div`
   align-items: center;
   background-color: rgb(28, 28, 27);
   position: relative;
+
+  @media only screen and (max-width: 480px) {
+    height: 70vh;
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px){
+    height: 85vh;
+  }
 `;
 const Vector = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;    
-      
+  align-items: center;
+
   img {
     height: 82.3vh;
     width: 67vw;
     box-shadow: -20px 20px 40px rgba(0, 0, 0, 1);
     position: relative;
+
+    @media only screen and (max-width: 480px) {
+      height: 30vh;
+      width: 80vw;
+      box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+      height: 55vh;
+      width: 80vw;
+      box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.9);
+    }
   }
-}
 `;
 
 const Eye_Container = styled.div`

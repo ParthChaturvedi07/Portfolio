@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import myPhoto from "../assets/images/MyPhoto2.jpg";
 import gsap from "gsap";
@@ -16,6 +16,10 @@ const Main = styled.div`
   width: 100%;
   min-height: 100vh;
   position: relative;
+
+  @media only screen and (max-width: 480px) {
+    min-height: auto;
+  }
 `;
 
 const Yellow_Glow = styled.div`
@@ -29,6 +33,10 @@ const Yellow_Glow = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+
+  @media only screen and (max-width: 480px) {
+    display: none;
   }
 `;
 const Yellow_Glow2 = styled.div`
@@ -45,11 +53,22 @@ const Yellow_Glow2 = styled.div`
     width: 100%;
     object-fit: cover;
   }
+
+  @media only screen and (max-width: 480px) {
+    height: 20vh;
+    width: 20vh;
+  }
 `;
 
 const Heading = styled.h1`
   text-align: center;
   margin-top: 10vh;
+
+  @media only screen and (max-width: 480px) {
+    h1 {
+      font-size: 2.6rem;
+    }
+  }
 `;
 
 const Contact = styled.div`
@@ -60,6 +79,7 @@ const Contact = styled.div`
   align-items: center;
   position: relative;
 `;
+
 const Background_Text = styled.div`
   text-align: center;
   h1 {
@@ -67,6 +87,10 @@ const Background_Text = styled.div`
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-color: rgba(255, 215, 0, 0.2);
     -webkit-text-stroke-width: 1.8px;
+
+    @media only screen and (max-width: 480px) {
+      font-size: 4rem;
+    }
   }
 `;
 
@@ -84,6 +108,11 @@ const Contact_container = styled.div`
   height: 60vh;
   width: 60vw;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  @media only screen and (max-width: 480px) {
+    height: 50vh;
+    width: 80vw;
+  }
 `;
 
 const Social_Icons = styled.div`
@@ -110,8 +139,8 @@ const Icons = styled.div`
   }
 
   .icon {
-    width: 8vw;
-    height: 8vw;
+    width: 18vh;
+    height: 18vh;
     padding: 0.5em;
     display: flex;
     justify-content: center;
@@ -141,6 +170,19 @@ const Icons = styled.div`
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
     }
   }
+  @media only screen and (max-width: 480px) {
+    transform: scale(0.45);
+    h2 {
+      font-size: 1vh;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    transform: scale(0.7);
+    h2 {
+      font-size: 1.7vh;
+    }
+  }
 `;
 
 const My_Photo = styled.div`
@@ -156,6 +198,7 @@ const My_Photo = styled.div`
   img {
     width: 100%;
     height: 100%;
+    border-radius: 10px;
     object-fit: contain;
     transform: scale(1.8) translateY(4vh);
   }
@@ -167,6 +210,17 @@ const Footer = styled.div`
     text-align: center;
     font-size: 0.7rem;
     letter-spacing: 2px;
+  }
+  @media only screen and (max-width: 480px) {
+    p {
+      font-size: 0.44rem;
+    }
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    p {
+      font-size: 0.5rem;
+    }
   }
 `;
 export const Contacts = () => {
@@ -333,10 +387,7 @@ export const Contacts = () => {
                 </div>
               </Link>
               {/* Instagram */}
-              <Link
-                to="https://www.instagram.com/_parth_who/"
-                className="link"
-              >
+              <Link to="https://www.instagram.com/_parth_who/" className="link">
                 <div className="icon instagram">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
