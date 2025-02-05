@@ -28,16 +28,6 @@ function App() {
     return () => locomotiveScroll.destroy();
   }, []);
 
-  useEffect(() => {
-    if (loading) {
-      document.body.style.overflow = "hidden";
-    } else {
-      return () => {
-        document.body.style.overflow = "auto";
-      };
-    }
-  }, [loading]);
-
   return (
     <>
       {loading ? (
