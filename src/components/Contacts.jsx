@@ -428,7 +428,7 @@ export const Contacts = () => {
                       <stop
                         offset=".999"
                         stop-color="#4168c9"
-                        stop-opacity="0"
+                        stopOpacity="0"
                       ></stop>
                     </radialGradient>
                     <path

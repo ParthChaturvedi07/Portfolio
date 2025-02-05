@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
-import { Home } from "./components/Home"; 
+import { Home } from "./components/Home";
 import { Header } from "./components/Header";
 import { Audio } from "./components/Audio";
 import { Cursor } from "./components/Cursor";
@@ -13,24 +13,52 @@ import { Projects } from "./components/Projects";
 import { Hackathons } from "./components/Hackathons";
 import { Eyes } from "./components/Eyes";
 import { Contacts } from "./components/Contacts";
+import Loader from "./components/loader";
+
 function App() {
-  const locomotiveScroll = new LocomotiveScroll();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const locomotiveScroll = new LocomotiveScroll();
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => locomotiveScroll.destroy();
+  }, []);
+
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = "hidden";
+    } else {
+      return () => {
+        document.body.style.overflow = "auto";
+      };
+    }
+  }, [loading]);
 
   return (
     <>
-      <Audio />
-      <Header />
-      <CursorProvider>
-        <Cursor />
-      </CursorProvider>
-      <Home />
-      <Marquee />
-      <About />
-      <Skills />
-      <Projects />
-      <Hackathons />
-      <Eyes />
-      <Contacts/>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <Audio />
+          <Header />
+          <CursorProvider>
+            <Cursor />
+          </CursorProvider>
+          <Home />
+          <Marquee />
+          <About />
+          <Skills />
+          <Projects />
+          <Hackathons />
+          <Eyes />
+          <Contacts />
+        </>
+      )}
     </>
   );
 }
