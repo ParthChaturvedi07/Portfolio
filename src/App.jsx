@@ -23,7 +23,7 @@ function App() {
 
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 4000);
 
     return () => locomotiveScroll.destroy();
   }, []);
