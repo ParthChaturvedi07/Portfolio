@@ -18,14 +18,11 @@ import Loader from "./components/loader";
 function App() {
   const [loading, setLoading] = useState(true);
 
+  const locomotiveScroll = new LocomotiveScroll();
   useEffect(() => {
-    const locomotiveScroll = new LocomotiveScroll();
-
     setTimeout(() => {
       setLoading(false);
     }, 4000);
-
-    return () => locomotiveScroll.destroy();
   }, []);
 
   return (
