@@ -13,39 +13,25 @@ import { Projects } from "./components/Projects";
 import { Hackathons } from "./components/Hackathons";
 import { Eyes } from "./components/Eyes";
 import { Contacts } from "./components/Contacts";
-import Loader from "./components/loader";
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
   const locomotiveScroll = new LocomotiveScroll();
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 4000);
-  }, []);
 
   return (
     <>
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <Audio />
-          <Header />
-          <CursorProvider>
-            <Cursor />
-          </CursorProvider>
-          <Home />
-          <Marquee />
-          <About />
-          <Skills />
-          <Projects />
-          <Hackathons />
-          <Eyes />
-          <Contacts />
-        </>
-      )}
+      <Audio />
+      <Header />
+      <CursorProvider>
+        <Cursor />
+      </CursorProvider>
+      <Home />
+      <Marquee />
+      <About />
+      <Skills />
+      <Projects />
+      <Hackathons />
+      <Eyes />
+      <Contacts />
     </>
   );
 }
