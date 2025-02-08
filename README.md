@@ -23,7 +23,7 @@ Welcome to my **high-tech and visually immersive** portfolio website! Designed t
 - ✅ **Contact Section** – Let's connect!
 
 ## 🌍 Live Website
-[Check it out here!](https://lnkd.in/gTNuUz8q)
+[Check it out here!](https://parthportfolio-red.vercel.app/)
 
 ## 🚀 Why This Portfolio?
 This isn’t just a collection of my work—it’s a **reflection of my passion** for web development and UI/UX. I’m excited to continue refining and adding more features to make it even better!
