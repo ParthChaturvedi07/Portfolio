@@ -14,7 +14,7 @@ import E_equilibriumIMG from "../assets/images/EmpheralEquilibrium.png";
 import Chat_App_IMG from "../assets/images/ChatApp.png";
 import Linkedin_IMG from "../assets/images/Linkedin.png";
 import Backend1 from "../assets/images/backend1.webp";
-import Backend2 from "../assets/images/Backend2.webp";
+import Promptly from "../assets/images/promptly.png";
 import Model_1 from "../assets/images/ProjectModel(1).png";
 import Model_2 from "../assets/images/ProjectModel(2).png";
 import { Link } from "react-router-dom";
@@ -667,15 +667,24 @@ export const Projects = () => {
               </Link>
             </Card_2>
             <Card_2 style={{ "--position": 3 }}>
-              <Project_Cover>
-                <img src={Backend2} alt="" />
-              </Project_Cover>
-              <CardContent>
-                <CardTitle>Card Title</CardTitle>
-                <CardDescription>
-                  Sample_Desc_.....................................
-                </CardDescription>
-              </CardContent>
+              <Link
+                to="https://promptly-ai.onrender.com/login"
+                className="link"
+              >
+                <Project_Cover>
+                  <img src={Promptly} alt="" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>Promptly</CardTitle>
+                  <CardDescription>
+                    I've been working on Promptly, a real-time collaborative
+                    chat platform that integrates 𝗚𝗼𝗼𝗴𝗹𝗲'𝘀 𝗚𝗲𝗺𝗶𝗻𝗶 𝗔𝗣𝗜 and
+                    𝗦𝗼𝗰𝗸𝗲𝘁.𝗜𝗢, allowing users to build projects seamlessly. But
+                    that's not all—Promptly isn't just a chat app; 𝐢𝐭'𝐬 𝐚𝐧
+                    𝐀𝐈-𝐩𝐨𝐰𝐞𝐫𝐞𝐝 𝐜𝐨𝐝𝐢𝐧𝐠 𝐚𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭!
+                  </CardDescription>
+                </CardContent>
+              </Link>
             </Card_2>
             <Card_2 style={{ "--position": 4 }}>
               <Project_Cover>
