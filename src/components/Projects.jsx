@@ -13,7 +13,7 @@ import EcommmerceIMG from "../assets/images/Ecommercewbst.png";
 import E_equilibriumIMG from "../assets/images/EmpheralEquilibrium.png";
 import Chat_App_IMG from "../assets/images/ChatApp.png";
 import Linkedin_IMG from "../assets/images/Linkedin.png";
-import Backend1 from "../assets/images/backend1.webp";
+import HoopScotch from "../assets/images/HopScotch.png";
 import Promptly from "../assets/images/promptly.png";
 import Model_1 from "../assets/images/ProjectModel(1).png";
 import Model_2 from "../assets/images/ProjectModel(2).png";
@@ -630,7 +630,7 @@ export const Projects = () => {
           <Slider style={{ "--quantity": 4 }}>
             <Card_2 style={{ "--position": 1 }}>
               <Link
-                to="https://www.linkedin.com/feed/update/urn:li:activity:7278450445436514305/"
+                to="https://github.com/ParthChaturvedi07/LinkedIn"
                 className="link"
               >
                 <Project_Cover>
@@ -650,7 +650,7 @@ export const Projects = () => {
             </Card_2>
             <Card_2 style={{ "--position": 2 }}>
               <Link
-                to="https://chat-application-ar98.onrender.com/"
+                to="https://github.com/ParthChaturvedi07/Chat-Application"
                 className="link"
               >
                 <Project_Cover>
@@ -668,7 +668,7 @@ export const Projects = () => {
             </Card_2>
             <Card_2 style={{ "--position": 3 }}>
               <Link
-                to="https://promptly-ai.onrender.com/login"
+                to="https://github.com/ParthChaturvedi07/Promptly"
                 className="link"
               >
                 <Project_Cover>
@@ -687,15 +687,22 @@ export const Projects = () => {
               </Link>
             </Card_2>
             <Card_2 style={{ "--position": 4 }}>
-              <Project_Cover>
-                <img src={Backend1} alt="" />
-              </Project_Cover>
-              <CardContent>
-                <CardTitle>Card Title</CardTitle>
-                <CardDescription style={{ color: "black" }}>
-                  Sample_Desc_..................
-                </CardDescription>
-              </CardContent>
+              <Link to="https://hopscotch-qrif.onrender.com/" className="link">
+                <Project_Cover>
+                  <img src={HoopScotch} alt="" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>Hop Scotch</CardTitle>
+                  <CardDescription style={{ color: "white" }}>
+                    HopScotch is a fully functional taxi booking mobile web
+                    application built using the MERN stack (MongoDB, Express.js,
+                    React, Node.js). Designed with a quirky black-and-white
+                    cartoonish theme, HopScotch aims to offer a simple and fun
+                    user experience while maintaining robust backend
+                    architecture and authentication flow.
+                  </CardDescription>
+                </CardContent>
+              </Link>
             </Card_2>
           </Slider>
           <Content_Type>
