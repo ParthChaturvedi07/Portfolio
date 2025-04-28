@@ -601,7 +601,7 @@ export const Projects = () => {
                   <img src={portfolioIMG} alt="Portfolio" />
                 </Project_Cover>
                 <CardContent>
-                  <CardTitle>Lazarev</CardTitle>
+                  <CardTitle>My Portfolio</CardTitle>
                   <CardDescription>
                     My portfolio highlights a diverse range of frontend
                     development skills, showcasing innovative animations,
