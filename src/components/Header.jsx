@@ -292,7 +292,7 @@ export const Header = () => {
           <Resume_Button
             onClick={() =>
               window.open(
-                "https://drive.google.com/file/d/1gQHUP4lTf6aTG08Rf9pnS8ZltFB4WoPg/view",
+                "https://drive.google.com/file/d/1j7p69yvD7NqU3yzuy8at3vLej7KT5eT9/view?usp=sharing",
                 "_blank"
               )
             }
@@ -339,7 +339,7 @@ export const Header = () => {
             className="button"
             onClick={() =>
               window.open(
-                "https://drive.google.com/file/d/1gQHUP4lTf6aTG08Rf9pnS8ZltFB4WoPg/view",
+                "https://drive.google.com/file/d/1j7p69yvD7NqU3yzuy8at3vLej7KT5eT9/view?usp=sharing",
                 "_blank"
               )
             }
