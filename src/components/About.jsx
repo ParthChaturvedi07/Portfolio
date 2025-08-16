@@ -464,7 +464,7 @@ export const About = () => {
       <Triggerer_Div className="triggerer"></Triggerer_Div>
       <Main id="about" className="video-section">
         <VideoContainer>
-          <video src={Video} autoPlay loop muted></video>
+          <video src="https://res.cloudinary.com/drtyehnro/video/upload/v1755363432/176963-856267342_zfosia.mp4" autoPlay loop muted></video>
         </VideoContainer>
         <ImgContainer className="img-container">
           <img src={WindowImage} alt="" />

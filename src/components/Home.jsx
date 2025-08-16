@@ -288,7 +288,7 @@ export const Home = () => {
         <CanvasContainer>
           <Back_Glow ref={glowRef}></Back_Glow>
           <CanvasElement ref={canvasRef} id="canvas"></CanvasElement>
-          <MyLogo ref={logoRef} src={parthLogo} alt="Logo" />
+          <MyLogo ref={logoRef} src="https://res.cloudinary.com/drtyehnro/image/upload/v1755363247/logo_smp39p.png" alt="Logo" />
           <QuoteContainer>
             <p>
               <span ref={quoteTextRef} />

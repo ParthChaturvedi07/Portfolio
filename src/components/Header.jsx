@@ -317,7 +317,7 @@ export const Header = () => {
             }}
             onClick={() => setIsSidebarVisible(false)}
           ></i>
-          <MyLogo src={parthLogo} alt="" />
+          <MyLogo src="https://res.cloudinary.com/drtyehnro/image/upload/v1755363247/logo_smp39p.png" alt="" />
           <NavItems className="nav-items2">
             <NavLink to="#" onClick={() => scrollToSection("home")}>
               Home
