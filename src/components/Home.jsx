@@ -3,7 +3,6 @@ import "./styles.css";
 import styled from "styled-components";
 import { gsap } from "gsap";
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
@@ -11,6 +10,9 @@ import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass";
 import { RGBShiftShader } from "three/examples/jsm/shaders/RGBShiftShader";
 import parthLogo from "../assets/images/logo.png";
 import Typed from "typed.js";
+
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 // Styled components
 const Main = styled.div`
@@ -172,9 +174,14 @@ export const Home = () => {
 
     let model;
 
+    // Setup GLTF + DRACO Loader
     const loader = new GLTFLoader();
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/"); // Google CDN for decoder
+    loader.setDRACOLoader(dracoLoader);
+
     loader.load(
-      "/3d_Model/DamagedHelmet.gltf",
+      "/3d_Model/DamagedHelmet_draco.glb",
       (gltf) => {
         model = gltf.scene;
         scene.add(model);
