@@ -25,238 +25,290 @@ gsap.registerPlugin(ScrollTrigger);
 const Section = styled.section`
   width: 100%;
   background-color: #000;
-  padding: 3.1rem;
+  padding: 4rem 2rem;
   color: #fff;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50px 50px 0 0;
   overflow: hidden;
   position: relative;
+
+  @media only screen and (max-width: 768px) {
+    padding: 2rem 1rem;
+    border-radius: 30px 30px 0 0;
+  }
 `;
 
 const Boxes_container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 8rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 1024px) {
+    gap: 6rem;
+  }
 
   @media only screen and (max-width: 768px) {
-    gap: 3rem;
+    gap: 4rem;
   }
 `;
 
 const Columns = styled.div`
   z-index: 10;
-  display: flex;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem;
+  align-items: center;
 
-  @media only screen and (max-width: 620px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
+  @media only screen and (max-width: 1024px) {
+    gap: 1.5rem;
   }
 
-  @media only screen and (min-width: 621px) and (max-width: 768px) {
-    gap: 1rem;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   &.box1 {
     .col-1 {
       display: flex;
-      gap: 1.5rem;
-      flex: 5;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
 
       img:first-child {
-        transform: rotate(-45deg);
+        transform: rotate(-15deg);
+        transition: transform 0.3s ease;
       }
 
       img:nth-child(2) {
-        align-self: center;
-        transform: rotate(20deg);
+        transform: rotate(15deg);
+        transition: transform 0.3s ease;
       }
 
-      @media only screen and (max-width: 620px) {
-        gap: 0;
+      &:hover img:first-child {
+        transform: rotate(-5deg) scale(1.05);
+      }
+
+      &:hover img:nth-child(2) {
+        transform: rotate(5deg) scale(1.05);
+      }
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: row;
+        gap: 1.5rem;
+        
         img:first-child {
-          transform: rotate(-5deg);
+          transform: rotate(-10deg);
         }
         img:nth-child(2) {
-          align-self: center;
-        }
-      }
-
-      @media only screen and (min-width: 621px) and (max-width: 1024px) {
-        gap: 0;
-        flex-direction: column;
-        img:first-child {
-          transform: rotate(0deg);
-        }
-        img:nth-child(2) {
-          transform: rotate(0deg);
-          align-self: center;
-        }
-      }
-    }
-
-    .col-2 {
-      margin: auto;
-      h1 {
-        font-size: 100px;
-        text-transform: capitalize;
-        text-align: center;
-      }
-      .text-box ul li,
-      .text-box p {
-        justify-self: center;
-        font-size: 1rem;
-        line-height: 1.9;
-        padding-bottom: 0.5rem;
-        opacity: 0.8;
-        text-align: center;
-      }
-
-      @media only screen and (max-width: 620px) {
-        h1 {
-          font-size: 40px;
-          text-align: center;
-          margin-bottom: 1vh;
-        }
-        .text-box ul li,
-        .text-box p {
-          justify-self: center;
-          font-size: 0.8rem;
-          line-height: 1.6;
-        }
-      }
-
-      @media only screen and (min-width: 621px) and (max-width: 768px) {
-        h1 {
-          font-size: 50px;
-          text-align: center;
-          margin-bottom: 1vh;
-        }
-       .text-box ul li,
-       .text-box p {
-          justify-self: center;
-          font-size: 0.8rem;
-          line-height: 1.7;
-        }
-      }
-    }
-
-    .col-3 {
-      display: flex;
-      gap: 2.5rem;
-      flex: 4;
-
-      img:nth-child(1) {
-        transform: rotate(20deg);
-      }
-      img:nth-child(2) {
-        transform: rotate(-20deg);
-        align-self: center;
-      }
-
-      @media only screen and (max-width: 620px) {
-        gap: 0;
-
-        img:nth-child(1) {
-          transform: rotate(20deg);
-        }
-        img:nth-child(2) {
-          transform: rotate(20deg);
-          align-self: center;
-        }
-      }
-    }
-  }
-
-    &.box2 {
-      .col-1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-
-        img:first-child {
-          transform: rotate(-20deg);
-        }
-        img:nth-child(2) {
-          transform: rotate(20deg);
-        }
-        img:nth-child(3) {
           transform: rotate(10deg);
         }
       }
     }
 
     .col-2 {
-      margin: auto;
-
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
       h1 {
-        font-size: 50px;
+        font-size: clamp(2rem, 5vw, 4rem);
         text-transform: capitalize;
         text-align: center;
-      }
-      .text-box ul li,
-      .text-box p {
-        justify-self: center;
-        font-size: 1rem;
-        line-height: 1.9;
-        padding-bottom: 0.5rem;
-        opacity: 0.8;
-        text-align: center;
-      }
-
-      @media only screen and (max-width: 620px) {
-        h1 {
-          font-size: 30px;
-          margin-bottom: 1vh;
-        }
-        .text-box ul li,
-        .text-box p {
-          justify-self: center;
-          font-size: 0.8rem;
-          line-height: 1.6;
-        }
-      }
-
-      @media only screen and (min-width: 621px) and (max-width: 768px) {
-        h1 {
-          font-size: 50px;
-          text-align: center;
-          margin-bottom: 1vh;
-        }
-       .text-box ul li,
-       .text-box p {
-          justify-self: center;
-          font-size: 0.8rem;
-          line-height: 1.7;
-        }
+        margin-bottom: 1.5rem;
+        font-weight: 700;
       }
       
+      .text-box {
+        max-width: 600px;
+        
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 1rem 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          
+          li {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            opacity: 0.9;
+            position: relative;
+            padding-left: 1.5rem;
+            
+            &::before {
+              content: "▸";
+              position: absolute;
+              left: 0;
+              color: #ffd700;
+            }
+          }
+        }
+        
+        p {
+          font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+          line-height: 1.8;
+          opacity: 0.8;
+          text-align: center;
+        }
+      }
     }
 
     .col-3 {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
 
-      img:first-child {
-        transform: rotate(10deg);
+      img:nth-child(1) {
+        transform: rotate(15deg);
+        transition: transform 0.3s ease;
       }
       img:nth-child(2) {
-        transform: rotate(-20deg);
+        transform: rotate(-15deg);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img:nth-child(1) {
+        transform: rotate(5deg) scale(1.05);
+      }
+
+      &:hover img:nth-child(2) {
+        transform: rotate(-5deg) scale(1.05);
+      }
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: row;
+        gap: 1.5rem;
+        
+        img:nth-child(1) {
+          transform: rotate(10deg);
+        }
+        img:nth-child(2) {
+          transform: rotate(-10deg);
+        }
+      }
+    }
+  }
+
+  &.box2 {
+    .col-1 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      justify-items: center;
+      align-items: center;
+
+      img {
+        transition: transform 0.3s ease;
+      }
+
+      img:first-child {
+        transform: rotate(-15deg);
+      }
+      img:nth-child(2) {
+        transform: rotate(15deg);
       }
       img:nth-child(3) {
         transform: rotate(10deg);
       }
       img:nth-child(4) {
-        transform: rotate(-20deg);
+        transform: rotate(-10deg);
       }
 
-      @media only screen and (max-width: 620px) {
+      &:hover img {
+        transform: rotate(0deg) scale(1.05);
+      }
+
+      @media only screen and (max-width: 768px) {
         gap: 1rem;
-        justify-content: center;
-        align-items: center;
+      }
+    }
+
+    .col-2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        text-transform: capitalize;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+      
+      .text-box {
+        max-width: 600px;
+        
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 1rem 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          
+          li {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            opacity: 0.9;
+            position: relative;
+            padding-left: 1.5rem;
+            
+            &::before {
+              content: "▸";
+              position: absolute;
+              left: 0;
+              color: #ffd700;
+            }
+          }
+        }
+        
+        p {
+          font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+          line-height: 1.8;
+          opacity: 0.8;
+          text-align: center;
+        }
+      }
+    }
+
+    .col-3 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      justify-items: center;
+      align-items: center;
+
+      img {
+        transition: transform 0.3s ease;
+      }
+
+      img:first-child {
+        transform: rotate(10deg);
+      }
+      img:nth-child(2) {
+        transform: rotate(-15deg);
+      }
+      img:nth-child(3) {
+        transform: rotate(15deg);
+      }
+      img:nth-child(4) {
+        transform: rotate(-10deg);
+      }
+
+      &:hover img {
+        transform: rotate(0deg) scale(1.05);
+      }
+
+      @media only screen and (max-width: 768px) {
+        gap: 1rem;
       }
     }
   }
@@ -264,108 +316,138 @@ const Columns = styled.div`
   &.box3 {
     .col-1 {
       display: flex;
-      gap: 1.5rem;
       flex-direction: column;
-      width: 50vh;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
       position: relative;
+      min-height: 300px;
+
+      img {
+        transition: transform 0.3s ease;
+      }
 
       img:first-child {
-        position: absolute;
-        right: 0;
-        transform: rotate(-10deg);
+        transform: rotate(-15deg);
       }
 
       img:nth-child(2) {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        transform: rotate(10deg);
+        transform: rotate(15deg);
       }
-      @media only screen and (max-width: 620px) {
+
+      &:hover img:first-child {
+        transform: rotate(-5deg) scale(1.05);
+      }
+
+      &:hover img:nth-child(2) {
+        transform: rotate(5deg) scale(1.05);
+      }
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: row;
+        gap: 1.5rem;
+        min-height: auto;
+        
         img:first-child {
-          position: absolute;
-          right: 4vh;
-          top: 15vh;
-          transform: rotate(0deg) scale(0.8);
+          transform: rotate(-10deg);
         }
 
         img:nth-child(2) {
-          position: absolute;
-          left: -1vh;
-          bottom: -10vh;
-          transform: rotate(20deg) scale(0.8);
+          transform: rotate(10deg);
         }
       }
     }
 
     .col-2 {
-      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
       h1 {
-        font-size: 50px;
+        font-size: clamp(1.8rem, 4vw, 3rem);
         text-transform: capitalize;
         text-align: center;
-      }
-      .text-box ul li,
-      .text-box p {
-        justify-self: center;
-        font-size: 1rem;
-        line-height: 1.9;
-        padding-bottom: 0.5rem;
-        opacity: 0.8;
-        text-align: center;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
       }
 
-      @media only screen and (max-width: 620px) {
-        h1 {
-          font-size: 30px;
+      .text-box {
+        max-width: 600px;
+        
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 1rem 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          
+           li {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            opacity: 0.9;
+            position: relative;
+            padding-left: 1.5rem;
+            
+            &::before {
+              content: "▸";
+              position: absolute;
+              left: 0;
+              color: #ffd700;
+            }
+          }
         }
-        .text-box ul li,
-        .text-box p {
-          justify-self: center;
-          font-size: 0.8rem;
-          line-height: 1.6;
-        }
-      }
-      
-      @media only screen and (min-width: 621px) and (max-width: 768px) {
-        h1 {
-          font-size: 50px;
+        
+        p {
+          font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+          line-height: 1.8;
+          opacity: 0.8;
           text-align: center;
-          margin-bottom: 1vh;
-        }
-       .text-box ul li,
-       .text-box p {
-          justify-self: center;
-          font-size: 0.8rem;
-          line-height: 1.7;
         }
       }
     }
 
     .col-3 {
       display: flex;
-      gap: 1.5rem;
       flex-direction: column;
-      width: 50vh;
-      height: 65vh;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
       position: relative;
+      min-height: 300px;
+
+      img {
+        transition: transform 0.3s ease;
+      }
 
       img:first-child {
-        position: absolute;
-        left: 0;
-        transform: rotate(10deg);
+        transform: rotate(15deg);
       }
 
       img:nth-child(2) {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        transform: rotate(-50deg);
+        transform: rotate(-25deg);
       }
 
-      @media only screen and (max-width: 620px) {
-        width: 100%;
-        height: 13vh;
+      &:hover img:first-child {
+        transform: rotate(5deg) scale(1.05);
+      }
+
+      &:hover img:nth-child(2) {
+        transform: rotate(-15deg) scale(1.05);
+      }
+
+      @media only screen and (max-width: 768px) {
+        flex-direction: row;
+        gap: 1.5rem;
+        min-height: auto;
+        
+        img:first-child {
+          transform: rotate(10deg);
+        }
+
+        img:nth-child(2) {
+          transform: rotate(-10deg);
+        }
       }
     }
   }
@@ -373,21 +455,16 @@ const Columns = styled.div`
 
 const Col = styled.div`
   img {
-    height: 190px;
-    width: 170px;
-    object-fit: cover;
-  }
-  @media only screen and (max-width: 620px) {
-    img {
-      height: 25vw;
-      width: 25vw;
-    }
+    height: clamp(120px, 15vw, 180px);
+    width: clamp(110px, 14vw, 160px);
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.2));
   }
 
-  @media only screen and (min-width: 621px) and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     img {
-      height: 20vw;
-      width: 20vw;
+      height: clamp(80px, 20vw, 120px);
+      width: clamp(75px, 19vw, 110px);
     }
   }
 `;
@@ -400,31 +477,36 @@ const SVG_Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 1684px;
-  opacity: 0.8;
+  height: 100%;
+  opacity: 0.6;
+  pointer-events: none;
 
   svg {
     height: 100%;
+    width: auto;
+    max-width: 100%;
     filter: drop-shadow(0 0 20px #ffd700) brightness(1.2);
     animation: pulseGlow 3s infinite;
   }
 
   @keyframes pulseGlow {
-    0% {
-      filter: drop-shadow(0 0 10px #ffd700);
+    0%, 100% {
+      filter: drop-shadow(0 0 10px #ffd700) brightness(1);
     }
     50% {
-      filter: drop-shadow(0 0 20px #ffd700);
+      filter: drop-shadow(0 0 25px #ffd700) brightness(1.3);
     }
-    100% {
-      filter: drop-shadow(0 0 10px #ffd700);
-    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    opacity: 0.4;
   }
 
   @media only screen and (max-width: 768px) {
     display: none;
   }
 `;
+
 export const Skills = () => {
   const SVG = useRef(null);
   const Path = useRef(null);
@@ -435,7 +517,6 @@ export const Skills = () => {
         trigger: ".section",
         start: "top 40%",
         end: "top -120%",
-        // markers: true,
         scrub: 3,
       },
     });
@@ -507,7 +588,7 @@ export const Skills = () => {
       ".box3 .col-2",
       {
         opacity: 0,
-        x: 150,
+        y: 150,
         duration: 2,
       },
       "move2"
@@ -521,41 +602,42 @@ export const Skills = () => {
       },
       "move2"
     );
+    
     const handleResize = () => ScrollTrigger.refresh();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useGSAP(() => {
-    const pathLength = Path.current.getTotalLength();
+    if (Path.current) {
+      const pathLength = Path.current.getTotalLength();
 
-    console.log(pathLength);
+      gsap.set(Path.current, { strokeDasharray: pathLength });
 
-    gsap.set(Path.current, { strokeDasharray: pathLength });
-
-    gsap.fromTo(
-      Path.current,
-      {
-        strokeDashoffset: pathLength,
-      },
-      {
-        strokeDashoffset: 0,
-        duration: 10,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".svg-container",
-          start: "top top",
-          end: "bottom bottom",
-          // markers: true,
-          scrub: 1,
+      gsap.fromTo(
+        Path.current,
+        {
+          strokeDashoffset: pathLength,
         },
-      }
-    );
+        {
+          strokeDashoffset: 0,
+          duration: 10,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".svg-container",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+          },
+        }
+      );
+    }
 
     const handleResize = () => ScrollTrigger.refresh();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   return (
     <>
       <Section id="skills" className="section">
@@ -579,8 +661,8 @@ export const Skills = () => {
         <Boxes_container>
           <Columns className="box1">
             <Col className="col-1">
-              <img src={cppLogo} alt="" />
-              <img src={JavaScriptLogo} alt="" />
+              <img src={cppLogo} alt="C++ Logo" />
+              <img src={JavaScriptLogo} alt="JavaScript Logo" />
             </Col>
             <Col className="col-2">
               <h1>
@@ -601,20 +683,20 @@ export const Skills = () => {
               </div>
             </Col>
             <Col className="col-3">
-              <img src={htmlLogo} alt="" />
-              <img src={cssLogo} alt="" />
+              <img src={htmlLogo} alt="HTML Logo" />
+              <img src={cssLogo} alt="CSS Logo" />
             </Col>
           </Columns>
           <Columns className="box2">
             <Col className="col-1">
-              <img src={NextJsLogo} alt="" />
-              <img src={ReactjsLogo} alt="" />
-              <img src={ReduxLogo} alt="" />
-              <img src={gsapLogo} alt="" />
+              <img src={NextJsLogo} alt="Next.js Logo" />
+              <img src={ReactjsLogo} alt="React Logo" />
+              <img src={ReduxLogo} alt="Redux Logo" />
+              <img src={gsapLogo} alt="GSAP Logo" />
             </Col>
             <Col className="col-2">
               <h1>
-                <strong>Frameworks and Libraries</strong>
+                <strong>Frameworks & Libraries</strong>
               </h1>
               <div className="text-box">
                 <ul>
@@ -637,20 +719,20 @@ export const Skills = () => {
               </div>
             </Col>
             <Col className="col-3">
-              <img src={NodejsLogo} alt="" />
-              <img src={tailwindLogo} alt="" />
-              <img src={MongoDbLogo} alt="" />
-              <img src={expressLogo} alt="" />
+              <img src={NodejsLogo} alt="Node.js Logo" />
+              <img src={tailwindLogo} alt="Tailwind Logo" />
+              <img src={MongoDbLogo} alt="MongoDB Logo" />
+              <img src={expressLogo} alt="Express Logo" />
             </Col>
           </Columns>
           <Columns className="box3">
             <Col className="col-1">
-              <img src={vscodeLogo} alt="" />
-              <img src={gitLogo} alt="" />
+              <img src={vscodeLogo} alt="VSCode Logo" />
+              <img src={gitLogo} alt="Git Logo" />
             </Col>
             <Col className="col-2">
               <h1>
-                <strong>Tools & Platforms:</strong>
+                <strong>Tools & Platforms</strong>
               </h1>
 
               <div className="text-box">
@@ -670,8 +752,8 @@ export const Skills = () => {
               </div>
             </Col>
             <Col className="col-3">
-              <img src={githubLogo} alt="" />
-              <img src={postmanLogo} alt="" />
+              <img src={githubLogo} alt="GitHub Logo" />
+              <img src={postmanLogo} alt="Postman Logo" />
             </Col>
           </Columns>
         </Boxes_container>
