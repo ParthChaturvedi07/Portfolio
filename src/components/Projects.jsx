@@ -533,7 +533,7 @@ export const Projects = () => {
               </Link>
             </Card>
             <Card style={{ "--position": 3 }}>
-              <Link to="https://techtastefoods.co" className="link">
+              <Link to="https://techtastefoods.com" className="link">
                 <Project_Cover>
                   <img src={TTFimg} alt="TTF website" />
                 </Project_Cover>
