@@ -8,7 +8,7 @@ import { useGSAP } from "@gsap/react";
 import portfolioIMG from "../assets/images/Portfolio.png";
 import appleSiteIMG from "../assets/images/Applewsbst.png";
 import LazarevIMG from "../assets/images/Lazarevwbst.png";
-import MMILImg from "../assets/images/MMIL.png";
+import TTFimg from "../assets/images/ttf.png";
 import EcommmerceIMG from "../assets/images/Ecommercewbst.png";
 import E_equilibriumIMG from "../assets/images/EmpheralEquilibrium.png";
 import Chat_App_IMG from "../assets/images/ChatApp.png";
@@ -533,19 +533,19 @@ export const Projects = () => {
               </Link>
             </Card>
             <Card style={{ "--position": 3 }}>
-              <Link
-                to="https://mmil-website-2k24-frontend.onrender.com/"
-                className="link"
-              >
+              <Link to="https://techtastefoods.co" className="link">
                 <Project_Cover>
-                  <img src={MMILImg} alt="MMIL website" />
+                  <img src={TTFimg} alt="TTF website" />
                 </Project_Cover>
                 <CardContent>
-                  <CardTitle>MMIL Website</CardTitle>
-                  <CardDescription>
-                    Worked in a team developing my College's tech society,
-                    Microsoft Mobile Innovation Lab's website fully based on
-                    React and a bit of backend with Node.js and Express.js
+                  <CardTitle>Tech Taste Foods</CardTitle>
+                  <CardDescription style={{ color: "black" }}>
+                    A modern, animated, and responsive frontend for Tech Taste
+                    Foods, built with React, Vite, styled-components, GSAP, and
+                    Locomotive Scroll (or Lenis for smooth scrolling). This
+                    project showcases restaurant/food business services,
+                    testimonials, stats, FAQs, and more, with rich UI/UX and
+                    smooth scroll-based animations.
                   </CardDescription>
                 </CardContent>
               </Link>

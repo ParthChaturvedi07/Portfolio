@@ -655,7 +655,10 @@ export const Skills = () => {
 
               <div className="text-box">
                 <ul>
-                  <li>VS Code</li>
+                  <li>Gen AI</li>
+                  <li>LLM</li>
+                  <li>RAG</li>
+                  <li>Langchain.js</li>
                   <li>Git</li>
                   <li>GitHub</li>
                   <li>Postman</li>
