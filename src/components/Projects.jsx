@@ -15,6 +15,7 @@ import Chat_App_IMG from "../assets/images/ChatApp.png";
 import Linkedin_IMG from "../assets/images/Linkedin.png";
 import HoopScotch from "../assets/images/HopScotch.png";
 import Promptly from "../assets/images/promptly.png";
+import Velvetor from "../assets/images/velvetor.png";
 import Model_1 from "../assets/images/ProjectModel(1).png";
 import Model_2 from "../assets/images/ProjectModel(2).png";
 import { Link } from "react-router-dom";
@@ -627,7 +628,7 @@ export const Projects = () => {
           </Content_Type>
         </Project_Container_1>
         <Project_Container_2 ref={Proj_Con_2}>
-          <Slider style={{ "--quantity": 4 }}>
+          <Slider style={{ "--quantity": 5 }}>
             <Card_2 style={{ "--position": 1 }}>
               <Link
                 to="https://github.com/ParthChaturvedi07/LinkedIn"
@@ -700,6 +701,27 @@ export const Projects = () => {
                     cartoonish theme, HopScotch aims to offer a simple and fun
                     user experience while maintaining robust backend
                     architecture and authentication flow.
+                  </CardDescription>
+                </CardContent>
+              </Link>
+            </Card_2>
+            <Card_2 style={{ "--position": 5 }}>
+              <Link to="https://www.velvetorperfumes.com/" className="link">
+                <Project_Cover>
+                  <img src={Velvetor} alt="" />
+                </Project_Cover>
+                <CardContent>
+                  <CardTitle>Velvetor Perfumes</CardTitle>
+                  <CardDescription style={{ color: "white" }}>
+                    I designed and built the Shopify storefront for Velvétor, a
+                    modern perfume house inspired by French perfumery. The
+                    project included developing a refined visual identity,
+                    crafting concise brand copy, and creating a user-focused
+                    layout that highlights each fragrance’s story and
+                    composition. I handled theme customization, product
+                    structuring, and performance optimization to deliver a
+                    clean, premium shopping experience that aligns with the
+                    brand’s luxury-yet-accessible positioning
                   </CardDescription>
                 </CardContent>
               </Link>
