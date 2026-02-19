@@ -14,7 +14,7 @@ import E_equilibriumIMG from "../assets/images/EmpheralEquilibrium.png";
 import Chat_App_IMG from "../assets/images/ChatApp.png";
 import Linkedin_IMG from "../assets/images/Linkedin.png";
 import HoopScotch from "../assets/images/HopScotch.png";
-import Promptly from "../assets/images/promptly.png";
+import Voxtrace from "../assets/images/Voxtrace.png";
 import Velvetor from "../assets/images/velvetor.png";
 import Model_1 from "../assets/images/ProjectModel(1).png";
 import Model_2 from "../assets/images/ProjectModel(2).png";
@@ -218,7 +218,8 @@ const Card = styled.div`
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   &:hover {
-    box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.8),
+    box-shadow:
+      0 0 20px 5px rgba(255, 215, 0, 0.8),
       0 8px 16px rgba(255, 255, 255, 0.2);
     filter: brightness(1.2);
   }
@@ -258,7 +259,8 @@ const Card_2 = styled.div`
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   &:hover {
-    box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.8),
+    box-shadow:
+      0 0 20px 5px rgba(255, 215, 0, 0.8),
       0 8px 16px rgba(255, 255, 255, 0.2);
     filter: brightness(1.2);
   }
@@ -457,7 +459,7 @@ export const Projects = () => {
         scale: 52,
         duration: 1,
       },
-      "enlarge"
+      "enlarge",
     );
     tl.to(
       ".mask-container .text-content",
@@ -466,7 +468,7 @@ export const Projects = () => {
         opacity: 0,
         duration: 0.5,
       },
-      "enlarge"
+      "enlarge",
     );
     tl.from(Proj_Con_1.current, {
       opacity: 0,
@@ -669,20 +671,25 @@ export const Projects = () => {
             </Card_2>
             <Card_2 style={{ "--position": 3 }}>
               <Link
-                to="https://github.com/ParthChaturvedi07/Promptly"
+                to="https://github.com/ParthChaturvedi07/voxtraceai"
                 className="link"
               >
                 <Project_Cover>
-                  <img src={Promptly} alt="" />
+                  <img src={Voxtrace} alt="VoxTrace AI" />
                 </Project_Cover>
                 <CardContent>
-                  <CardTitle>Promptly</CardTitle>
+                  <CardTitle>VoxTrace AI</CardTitle>
                   <CardDescription>
-                    I've been working on Promptly, a real-time collaborative
-                    chat platform that integrates 𝗚𝗼𝗼𝗴𝗹𝗲'𝘀 𝗚𝗲𝗺𝗶𝗻𝗶 𝗔𝗣𝗜 and
-                    𝗦𝗼𝗰𝗸𝗲𝘁.𝗜𝗢, allowing users to build projects seamlessly. But
-                    that's not all—Promptly isn't just a chat app; 𝐢𝐭'𝐬 𝐚𝐧
-                    𝐀𝐈-𝐩𝐨𝐰𝐞𝐫𝐞𝐝 𝐜𝐨𝐝𝐢𝐧𝐠 𝐚𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭!
+                    An AI-powered video calling platform
+                    currently under construction, built to combine real-time
+                    meetings with intelligent post-call insights. It supports
+                    live video calls with custom AI agents, automated
+                    transcripts and summaries, contextual meeting Q&A,
+                    searchable history, and video playback. The app uses Next.js
+                    15, React 19, Stream Video and Chat SDKs, OpenAI, Inngest
+                    background jobs, Polar subscriptions, and secure
+                    authentication, all within a mobile-responsive,
+                    production-focused architecture.
                   </CardDescription>
                 </CardContent>
               </Link>
