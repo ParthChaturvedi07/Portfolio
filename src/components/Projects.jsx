@@ -10,7 +10,7 @@ import appleSiteIMG from "../assets/images/Applewsbst.png";
 import LazarevIMG from "../assets/images/Lazarevwbst.png";
 import TTFimg from "../assets/images/ttf.png";
 import EcommmerceIMG from "../assets/images/Ecommercewbst.png";
-import E_equilibriumIMG from "../assets/images/EmpheralEquilibrium.png";
+import Prime from "../assets/images/prime.png";
 import Chat_App_IMG from "../assets/images/ChatApp.png";
 import Linkedin_IMG from "../assets/images/Linkedin.png";
 import HoopScotch from "../assets/images/HopScotch.png";
@@ -554,24 +554,20 @@ export const Projects = () => {
               </Link>
             </Card>
             <Card style={{ "--position": 4 }}>
-              <Link
-                to="https://parthchaturvedi07.github.io/GSAP-proj.2-/"
-                className="link"
-              >
+              <Link to="https://prime-ice-pop.vercel.app/" className="link">
                 <Project_Cover>
-                  <img src={E_equilibriumIMG} alt="Empheral Eqilibrium" />
+                  <img src={Prime} alt="Prime Ice Pop" />
                 </Project_Cover>
                 <CardContent>
-                  <CardTitle>Empheral Equilibrium</CardTitle>
-                  <CardDescription style={{ color: "black" }}>
-                    Dynamic Sustainability Web i.e Empheral Equilibrium with
-                    GSAP & Locomotive Scroll" is a web development project
-                    showcasing modern design techniques and a sustainability
-                    theme. It features advanced animations, smooth scrolling,
-                    and interactive elements, created using HTML, CSS,
-                    JavaScript, GSAP, and Locomotive Scroll. The project aims to
-                    promote eco-friendly practices through engaging web
-                    experiences.
+                  <CardTitle>Prime Ice Pop</CardTitle>
+                  <CardDescription style={{ color: "white" }}>
+                    Prime Ice Pop is a premium, interactive web experience built
+                    to showcase the Glowberry hydration drink through a highly
+                    immersive, user-driven narrative. Powered by Next.js, Framer
+                    Motion, and Tailwind CSS, the site features a custom-built
+                    3.5-second preloader that transitions into a stunning
+                    192-frame 3D canvas animation completely controlled by the
+                    user's scroll.
                   </CardDescription>
                 </CardContent>
               </Link>
@@ -680,16 +676,15 @@ export const Projects = () => {
                 <CardContent>
                   <CardTitle>VoxTrace AI</CardTitle>
                   <CardDescription>
-                    An AI-powered video calling platform
-                    currently under construction, built to combine real-time
-                    meetings with intelligent post-call insights. It supports
-                    live video calls with custom AI agents, automated
-                    transcripts and summaries, contextual meeting Q&A,
-                    searchable history, and video playback. The app uses Next.js
-                    15, React 19, Stream Video and Chat SDKs, OpenAI, Inngest
-                    background jobs, Polar subscriptions, and secure
-                    authentication, all within a mobile-responsive,
-                    production-focused architecture.
+                    An AI-powered video calling platform currently under
+                    construction, built to combine real-time meetings with
+                    intelligent post-call insights. It supports live video calls
+                    with custom AI agents, automated transcripts and summaries,
+                    contextual meeting Q&A, searchable history, and video
+                    playback. The app uses Next.js 15, React 19, Stream Video
+                    and Chat SDKs, OpenAI, Inngest background jobs, Polar
+                    subscriptions, and secure authentication, all within a
+                    mobile-responsive, production-focused architecture.
                   </CardDescription>
                 </CardContent>
               </Link>
