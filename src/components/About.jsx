@@ -472,7 +472,7 @@ export const About = () => {
         <TextContent>
           <ImgText>
             <Title className="title left">
-              <span>I’m a Web Developer</span>
+              <span>I’m a Software Developer</span>
             </Title>
             <Title className="title left">
               <span>
