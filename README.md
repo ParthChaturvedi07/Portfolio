@@ -1,4 +1,4 @@
-# 🚀 My Interactive Portfolio Website
+# My Portfolio Website
 
 Welcome to my **high-tech and visually immersive** portfolio website! Designed to showcase my skills, projects, and hackathon experiences, this portfolio delivers an engaging experience with cutting-edge animations and sleek UI elements.
 
@@ -29,7 +29,7 @@ Welcome to my **high-tech and visually immersive** portfolio website! Designed t
 This isn’t just a collection of my work—it’s a **reflection of my passion** for web development and UI/UX. I’m excited to continue refining and adding more features to make it even better!
 
 ## 💬 Feedback & Contributions
-Your feedback is valuable! Feel free to share your thoughts, and let’s connect. 🚀
+Your feedback is valuable! Feel free to share your thoughts, and let’s connect. 
 
 ---
 
