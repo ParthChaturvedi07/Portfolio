@@ -46,9 +46,9 @@ function App() {
     };
   }, []);
 
-  // if (loading) {
-  //   return <Loading fadeOut={fadeOut} />;
-  // }
+  if (loading) {
+    return <Loading fadeOut={fadeOut} />;
+  }
 
   return (
     <>
