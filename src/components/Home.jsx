@@ -19,6 +19,7 @@ const Main = styled.div`
   cursor: none;
   width: 100%;
   height: 100vh;
+  background: transparent;
 `;
 
 const CanvasContainer = styled.div`
@@ -26,6 +27,7 @@ const CanvasContainer = styled.div`
   height: 100%;
   overflow: hidden;
   position: relative;
+  background: transparent;
 `;
 
 const Back_Glow = styled.div`

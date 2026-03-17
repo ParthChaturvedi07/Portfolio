@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
+import { GradientBackground } from "./components/GradientBackground";
 import { Home } from "./components/Home";
 import { Header } from "./components/Header";
 import { Audio } from "./components/Audio";
@@ -13,45 +14,83 @@ import { Projects } from "./components/Projects";
 import { Hackathons } from "./components/Hackathons";
 import { Eyes } from "./components/Eyes";
 import { Contacts } from "./components/Contacts";
-import { Loading } from "./components/Loading";
+import { Loading } from "./components/Loader/Loading";
+import IntroScreen from "./components/Loader/IntroScreen";
 import { CircularTestimonials } from "./components/CircularTestimonials";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  // Check if this is the first time loading in this session
+  const hasVisited = sessionStorage.getItem("hasVisited");
+
+  const [loading, setLoading] = useState(hasVisited ? false : true);
+  const [showIntro, setShowIntro] = useState(hasVisited ? false : true);
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    const locomotiveScroll = new LocomotiveScroll();
+    // Only initialized locomotive scroll when main content is actually visible
+    if (!loading && !showIntro) {
+      new LocomotiveScroll();
+    }
 
-    // disable scroll when loader is active
-    if (loading) {
+    // disable scroll when loader OR intro is active
+    if (loading || showIntro) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
-  }, [loading]);
+  }, [loading, showIntro]);
 
   useEffect(() => {
+    // Skip completely if we've already visited
+    if (hasVisited) return;
+
     const handleLoad = () => {
-      setFadeOut(true); // trigger fade
+      setFadeOut(true);
+
       setTimeout(() => {
-        setLoading(false); // unmount loader
-      }, 800); // matches fade transition
+        setLoading(false);
+      }, 800);
     };
 
-    window.addEventListener("load", handleLoad);
+    // If document is already loaded before React mounts, just execute 
+    // (though load event is usually safer)
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
 
     return () => {
       window.removeEventListener("load", handleLoad);
     };
-  }, []);
+  }, [hasVisited]);
+
+  const handleStart = () => {
+    setShowIntro(false);
+    sessionStorage.setItem("hasVisited", "true");
+  };
 
   if (loading) {
-    return <Loading fadeOut={fadeOut} />;
+    return (
+      <>
+        <GradientBackground />
+        <Loading fadeOut={fadeOut} />
+      </>
+    );
+  }
+
+  if (showIntro) {
+    return (
+      <>
+        <GradientBackground />
+        <IntroScreen onStart={handleStart} />
+      </>
+    );
   }
 
   return (
     <>
+      <GradientBackground />
       <Audio />
       <Header />
       <CursorProvider>
