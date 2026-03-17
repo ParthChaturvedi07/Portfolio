@@ -54,14 +54,14 @@ export const Marquee = () => {
           animate={{ x: "-100%" }}
           transition={{ ease: "linear", repeat: Infinity, duration: 8 }}
         >
-          Web Developer
+          Software Developer
         </motion.h1>
         <motion.h1
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
           transition={{ ease: "linear", repeat: Infinity, duration: 8 }}
         >
-          Web Developer
+          Software Developer
         </motion.h1>
       </Text>
     </Main>
